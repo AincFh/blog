@@ -1,0 +1,71 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": ".next/server/**/*",
+      "use": "@cloudflare/next-on-pages"
+    },
+    {
+      "src": "public/**/*",
+      "use": "@cloudflare/static-site-generator"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1",
+      "methods": ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type, Authorization",
+        "Access-Control-Max-Age": "86400"
+      }
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ],
+  "vars": {
+    "NODE_ENV": "production",
+    "NEXT_BUILD_OUTPUT": "export",
+    "NEXT_PUBLIC_APP_ENV": "production"
+  },
+  "env": {
+    "AUTH_SECRET": "${AUTH_SECRET}",
+    "TURNSTILE_SECRET_KEY": "${TURNSTILE_SECRET_KEY}",
+    "NEXT_PUBLIC_TURNSTILE_SITE_KEY": "${NEXT_PUBLIC_TURNSTILE_SITE_KEY}"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "blog-database",
+      "database_id": "${DATABASE_ID}"
+    }
+  ],
+  "kv_namespaces": [
+    {
+      "binding": "KV_SESSIONS",
+      "id": "${KV_NAMESPACE_ID}",
+      "preview_id": "${KV_NAMESPACE_ID_PREVIEW}"
+    }
+  ],
+  "workers_dev": false,
+  "zone_id": "${ZONE_ID}",
+  "account_id": "${ACCOUNT_ID}",
+  "usage_model": "bundled",
+  "compatibility_date": "2023-12-01",
+  "compatibility_flags": [
+    "nodejs_compat",
+    "streams_enable_constructors",
+    "formdata_parser_supports_files"
+  ],
+  "always_use_last_uploaded_version": false,
+  "git": {
+    "deployment_enabled": true,
+    "production_branch": "main",
+    "preview_branch_includes": ["develop", "staging", "feature/*", "bugfix/*"],
+    "ignore_build_command": false
+  }
+}
