@@ -18,7 +18,6 @@ const nextConfig = {
   // Cloudflare Pages 优化设置
   skipTrailingSlashRedirect: true,
   trailingSlash: false,
-
 };
 
 export default nextConfig;
