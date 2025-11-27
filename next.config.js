@@ -10,10 +10,14 @@ const nextConfig = {
       },
     ],
   },
-  // 启用静态导出
-  output: 'export',
+  experimental: {
+    serverActions: {
+      allowedOrigins: ['localhost:3000']
+    }
+  },
   // Cloudflare Pages 优化设置
-  trailingSlash: true,
+  skipTrailingSlashRedirect: true,
+  trailingSlash: false,
   // 禁用构建时的检查以加速构建
   eslint: {
     ignoreDuringBuilds: true,
