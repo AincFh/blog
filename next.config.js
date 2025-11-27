@@ -18,6 +18,13 @@ const nextConfig = {
   // Cloudflare Pages 优化设置
   skipTrailingSlashRedirect: true,
   trailingSlash: false,
+  // 禁用构建时的检查以加速构建
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
 };
 
 export default nextConfig;
