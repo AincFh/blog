@@ -8,7 +8,8 @@ export async function GET(request: NextRequest) {
   const height = searchParams.get('height') || '600';
   const text = searchParams.get('text') || 'Placeholder';
   
-  // 创建SVG占位符图�?  const svg = `
+  // 创建SVG占位符图
+  const svg = `
     <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
       <rect width="100%" height="100%" fill="#f3f4f6"/>
       <rect width="100%" height="100%" fill="url(#gradient)" opacity="0.1"/>

@@ -9,15 +9,15 @@ import { PostService } from "@/shared/services/post-service";
 
 // 分类配置（带图标和颜色）
 const categoryConfig: Record<string, { icon: React.ReactNode; gradient: string; description: string }> = {
-  "技�?: {
+  "技术": {
     icon: <Code className="w-6 h-6" />,
     gradient: "from-blue-500 to-cyan-500",
-    description: "前端、后端、架构等技术相关文�?
+    description: "前端、后端、架构等技术相关文章"
   },
   "设计": {
     icon: <Palette className="w-6 h-6" />,
     gradient: "from-purple-500 to-pink-500",
-    description: "UI/UX、设计系统、创意设计相关文�?
+    description: "UI/UX、设计系统、创意设计相关文章"
   },
   "生活": {
     icon: <Coffee className="w-6 h-6" />,
@@ -90,7 +90,8 @@ export default function CategoriesPage() {
             文章分类
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            按分类浏览所有文章，找到您感兴趣的内�?          </p>
+            按分类浏览所有文章，找到您感兴趣的内容
+          </p>
         </motion.header>
 
         {loading ? (
@@ -119,8 +120,8 @@ export default function CategoriesPage() {
                     whileTap={{ scale: 0.98 }}
                     onClick={() => handleCategoryClick(category.id)}
                     className={`group relative overflow-hidden p-8 rounded-3xl transition-all duration-300 ${isSelected
-                        ? 'bg-white dark:bg-neutral-800 shadow-2xl ring-2 ring-primary'
-                        : 'bg-white/70 dark:bg-neutral-800/70 backdrop-blur-sm hover:shadow-xl border border-neutral-200/50 dark:border-neutral-700/50'
+                      ? 'bg-white dark:bg-neutral-800 shadow-2xl ring-2 ring-primary'
+                      : 'bg-white/70 dark:bg-neutral-800/70 backdrop-blur-sm hover:shadow-xl border border-neutral-200/50 dark:border-neutral-700/50'
                       }`}
                   >
                     {/* Gradient Background */}
@@ -141,7 +142,8 @@ export default function CategoriesPage() {
                       </p>
                       <div className="flex items-center justify-between">
                         <span className="text-sm font-medium text-muted-foreground">
-                          {category.count} 篇文�?                        </span>
+                          {category.count} 篇文章
+                        </span>
                         <ChevronRight className={`w-5 h-5 text-muted-foreground group-hover:translate-x-1 transition-transform ${isSelected ? 'rotate-90' : ''
                           }`} />
                       </div>
@@ -178,7 +180,8 @@ export default function CategoriesPage() {
                           {categories.find(c => c.id === selectedCategory)?.name} 分类文章
                         </h2>
                         <p className="text-sm text-muted-foreground">
-                          �?{categoryPosts.length} 篇文�?                        </p>
+                          共 {categoryPosts.length} 篇文章
+                        </p>
                       </div>
                       <Link
                         href={`/posts?category=${selectedCategory}`}
@@ -234,5 +237,3 @@ export default function CategoriesPage() {
     </main>
   );
 }
-
-

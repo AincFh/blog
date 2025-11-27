@@ -21,7 +21,7 @@ export default function PrivacyPage() {
     { id: "cookies", title: "Cookie政策" },
     { id: "children", title: "儿童隐私" },
     { id: "international", title: "国际数据传输" },
-    { id: "personalization", title: "个性化与同意管�? },
+    { id: "personalization", title: "个性化与同意管理" },
     { id: "changes", title: "政策变更" },
     { id: "contact", title: "联系我们" }
   ];
@@ -41,7 +41,8 @@ export default function PrivacyPage() {
             我们重视您的隐私，本政策说明我们如何收集、使用和保护您的个人信息
           </p>
           <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-2">
-            最后更新日期：2024�?�?�?          </p>
+            最后更新日期：2024年1月1日
+          </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
@@ -82,22 +83,22 @@ export default function PrivacyPage() {
                     <p>
                       我们遵循以下原则处理您的个人信息�?                    </p>
                     <ul className="list-disc pl-6 space-y-2">
-                      <li><strong>合法、正当、必要原�?/strong>：我们仅在合法、正当且必要的范围内收集、使用您的个人信�?/li>
-                      <li><strong>目的明确原则</strong>：我们收集个人信息时具有明确、合法的目的，不会超出范围使�?/li>
-                      <li><strong>最少够用原�?/strong>：我们只收集实现目的所必需的最少信�?/li>
-                      <li><strong>公开透明原则</strong>：我们通过本政策向您公开我们的信息处理实�?/li>
+                      <li><strong>合法、正当、必要原则</strong>：我们仅在合法、正当且必要的范围内收集、使用您的个人信息</li>
+                      <li><strong>目的明确原则</strong>：我们收集个人信息时具有明确、合法的目的，不会超出范围使用</li>
+                      <li><strong>最少够用原则</strong>：我们只收集实现目的所必需的最少信息</li>
+                      <li><strong>公开透明原则</strong>：我们通过本政策向您公开我们的信息处理实践</li>
                       <li><strong>安全保障原则</strong>：我们采取合理的安全措施保护您的个人信息</li>
-                      <li><strong>主体参与原则</strong>：我们尊重您对个人信息的控制�?/li>
+                      <li><strong>主体参与原则</strong>：我们尊重您对个人信息的控制权</li>
                     </ul>
                     <h3 className="text-lg font-semibold mt-6 mb-3">1.2 适用范围</h3>
                     <p>
                       本政策适用于我们通过本博客（包括网站、移动应用及相关服务）收集的所有个人信息，包括但不限于�?                    </p>
                     <ul className="list-disc pl-6 space-y-2">
-                      <li>您访问网站、浏览内容时产生的信�?/li>
-                      <li>您注册账户、登录时提供的信�?/li>
+                      <li>您访问网站、浏览内容时产生的信息</li>
+                      <li>您注册账户、登录时提供的信息</li>
                       <li>您发布文章、评论等内容时提供的信息</li>
-                      <li>您参与互动、活动时产生的信�?/li>
-                      <li>您通过第三方账户登录时共享的信�?/li>
+                      <li>您参与互动、活动时产生的信息</li>
+                      <li>您通过第三方账户登录时共享的信息</li>
                     </ul>
                     <h3 className="text-lg font-semibold mt-6 mb-3">1.3 定义</h3>
                     <p>
@@ -577,7 +578,8 @@ export default function PrivacyPage() {
                     <p>
                       我们将尽快回复您的询问，通常�?0天内。对于复杂的请求，我们可能需要更多时间，但我们会及时通知您�?                    </p>
                     <p className="mt-6 text-sm text-neutral-500 dark:text-neutral-400">
-                      最后更新日期：2024�?�?�?                    </p>
+                      最后更新日期：2024年1月1日
+                    </p>
                   </div>
                 </div>
               )}

@@ -7,7 +7,8 @@ import ScrollReveal from '@/shared/components/ScrollReveal';
 import Link from 'next/link';
 
 export default function SecurityPage() {
-  // 安全设置状�?  const [currentPassword, setCurrentPassword] = useState('');
+  // 安全设置状态
+  const [currentPassword, setCurrentPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [passwordStrength, setPasswordStrength] = useState<'weak' | 'medium' | 'strong'>('weak');
@@ -27,14 +28,16 @@ export default function SecurityPage() {
 
   // 密码变更处理
   const handlePasswordChange = () => {
-    // 这里可以添加实际的密码变更逻辑和验�?    // 直接执行密码变更
+    // 这里可以添加实际的密码变更逻辑和验证
+    // 直接执行密码变更
     setPasswordChanged(true);
     setCurrentPassword('');
     setNewPassword('');
     setConfirmPassword('');
   };
 
-  // 双因素认证切换处�?  const toggleTwoFactor = () => {
+  // 双因素认证切换处理
+  const toggleTwoFactor = () => {
     setTwoFactorEnabled(!twoFactorEnabled);
   };
 
@@ -48,7 +51,8 @@ export default function SecurityPage() {
               账户安全
             </h1>
             <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              管理您的账户安全设置，保护您的个人信�?            </p>
+              管理您的账户安全设置，保护您的个人信息
+            </p>
           </div>
         </ScrollReveal>
 
@@ -86,7 +90,7 @@ export default function SecurityPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-1">新密�?/label>
+                <label className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-1">新密码</label>
                 <input
                   type="password"
                   value={newPassword}
@@ -97,13 +101,13 @@ export default function SecurityPage() {
                   className="w-full px-4 py-2 rounded-lg border border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                 />
 
-                {/* 密码强度指示�?*/}
+                {/* 密码强度指示器 */}
                 {newPassword && (
                   <div className="mt-2">
                     <div className="flex items-center justify-between mb-1">
                       <span className="text-xs text-neutral-500 dark:text-neutral-400">密码强度</span>
                       <span className={`text-xs font-medium ${passwordStrength === 'weak' ? 'text-red-500' : passwordStrength === 'medium' ? 'text-amber-500' : 'text-green-500'}`}>
-                        {passwordStrength === 'weak' ? '�? : passwordStrength === 'medium' ? '�? : '�?}
+                        {passwordStrength === 'weak' ? '弱' : passwordStrength === 'medium' ? '中' : '强'}
                       </span>
                     </div>
                     <div className="h-1 w-full bg-neutral-200 dark:bg-neutral-700 rounded-full overflow-hidden">
@@ -120,7 +124,7 @@ export default function SecurityPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-1">确认新密�?/label>
+                <label className="block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-1">确认新密码</label>
                 <input
                   type="password"
                   value={confirmPassword}
@@ -130,7 +134,7 @@ export default function SecurityPage() {
               </div>
 
               {confirmPassword && newPassword && confirmPassword !== newPassword && (
-                <p className="text-red-500 text-sm">两次输入的密码不一�?/p>
+                <p className="text-red-500 text-sm">两次输入的密码不一致</p>
               )}
 
               {(() => {
@@ -141,7 +145,7 @@ export default function SecurityPage() {
                     disabled={isSubmitDisabled}
                     className={`mt-4 px-4 py-2 rounded-lg font-medium transition-colors ${isSubmitDisabled ? 'bg-neutral-300 dark:bg-neutral-700 text-neutral-500 dark:text-neutral-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700 text-white'}`}
                   >
-                    {passwordChanged ? '密码已更�? : '更新密码'}
+                    {passwordChanged ? '密码已更改' : '更新密码'}
                   </button>
                 );
               })()}
@@ -158,13 +162,13 @@ export default function SecurityPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                 </svg>
               </div>
-              <h2 className="text-xl font-semibold text-neutral-800 dark:text-neutral-100">双因素认�?/h2>
+              <h2 className="text-xl font-semibold text-neutral-800 dark:text-neutral-100">双因素认证</h2>
             </div>
 
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-neutral-700 dark:text-neutral-300 font-medium">启用双因素认�?/p>
-                <p className="text-sm text-neutral-500 dark:text-neutral-400">登录时需要输入额外的验证码，提高账户安全�?/p>
+                <p className="text-neutral-700 dark:text-neutral-300 font-medium">启用双因素认证</p>
+                <p className="text-sm text-neutral-500 dark:text-neutral-400">登录时需要输入额外的验证码，提高账户安全性</p>
               </div>
               <label className="relative inline-flex items-center cursor-pointer">
                 <input
@@ -180,17 +184,18 @@ export default function SecurityPage() {
             {twoFactorEnabled && (
               <div className="mt-6 p-4 bg-neutral-50 dark:bg-neutral-750 rounded-lg">
                 <p className="text-sm text-neutral-700 dark:text-neutral-300 mb-3">
-                  双因素认证已启用。请使用认证应用扫描下方二维码，并输入验证码完成设置�?                </p>
+                  双因素认证已启用。请使用认证应用扫描下方二维码，并输入验证码完成设置。
+                </p>
                 <div className="flex justify-center mb-4">
-                  {/* 这里应该是一个实际的二维码图片，现在使用占位�?*/}
+                  {/* 这里应该是一个实际的二维码图片，现在使用占位符 */}
                   <div className="w-32 h-32 bg-neutral-200 dark:bg-neutral-700 rounded-lg flex items-center justify-center">
-                    <span className="text-xs text-neutral-500">二维码占�?/span>
+                    <span className="text-xs text-neutral-500">二维码占位</span>
                   </div>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <input
                     type="text"
-                    placeholder="输入验证�?
+                    placeholder="输入验证码"
                     className="flex-1 px-4 py-2 rounded-lg border border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                   />
                   <button className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg font-medium transition-colors whitespace-nowrap">
@@ -211,7 +216,7 @@ export default function SecurityPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h2 className="text-xl font-semibold text-neutral-800 dark:text-neutral-100">第三方账号绑�?/h2>
+              <h2 className="text-xl font-semibold text-neutral-800 dark:text-neutral-100">第三方账号绑定</h2>
             </div>
 
             <div className="space-y-4">
