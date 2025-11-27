@@ -2,16 +2,16 @@
 @import "./responsive.css";
 
 :root {
-  /* Apple-like Premium Colors */
+  /* Apple-like Premium Colors - Refined */
   --background: #ffffff;
   --foreground: #1d1d1f;
   /* Apple's near-black */
 
-  /* iOS Blue */
-  --primary: #007AFF;
+  /* iOS Blue - Vibrant & Clear */
+  --primary: #0071e3;
   --primary-foreground: #ffffff;
 
-  /* Soft Grays */
+  /* Soft Grays & Surfaces */
   --secondary: #f5f5f7;
   /* Apple's light gray background */
   --secondary-foreground: #1d1d1f;
@@ -20,7 +20,7 @@
   --muted-foreground: #86868b;
   /* Apple's subtle gray */
 
-  --accent: #f5f5f7;
+  --accent: #e8e8ed;
   --accent-foreground: #1d1d1f;
 
   --destructive: #ff3b30;
@@ -29,72 +29,72 @@
 
   --border: #d2d2d7;
   --input: #ffffff;
-  --ring: #007AFF;
+  --ring: #0071e3;
 
   --card: #ffffff;
   --card-foreground: #1d1d1f;
 
-  --radius: 1rem;
-  /* rounded-2xl default */
+  --radius: 1.25rem;
+  /* Slightly larger radius for softer feel */
 
   /* Dark Mode Colors - Deep & Rich */
-  --bg-dark: #05050a;
+  --bg-dark: #000000;
+  /* True black for OLED */
   --text-dark: #f5f5f7;
-  --surface-dark: #121217;
+  --surface-dark: #1c1c1e;
   /* Apple's dark gray surface */
-  --border-dark: #2c2c2e;
+  --border-dark: #38383a;
 
   /* Custom Easings for "Telegram-like" Fluidity */
   --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   --ease-apple: cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
-
-
 /* 深色模式变量 */
 .dark {
   --background: var(--bg-dark);
   --foreground: var(--text-dark);
-  --primary: #0a84ff;
+  --primary: #2997ff;
+  /* Lighter blue for dark mode */
   --primary-foreground: #ffffff;
   --secondary: var(--surface-dark);
-  --secondary-foreground: #f1f5f9;
+  --secondary-foreground: #f5f5f7;
   --muted: #1c1c1e;
   --muted-foreground: #98989d;
   --accent: #2c2c2e;
-  --accent-foreground: #f1f5f9;
+  --accent-foreground: #f5f5f7;
   --destructive: #ff453a;
   --destructive-foreground: #ffffff;
   --border: var(--border-dark);
   --input: #1c1c1e;
-  --ring: #0a84ff;
-  --card: #121217;
+  --ring: #2997ff;
+  --card: #1c1c1e;
   --card-foreground: var(--text-dark);
-  --popover: #121217;
+  --popover: #1c1c1e;
   --popover-foreground: var(--text-dark);
 }
 
 /* 系统深色模式偏好 */
 @media (prefers-color-scheme: dark) {
   :root:not(.light) {
-    --background: #05050a;
+    --background: #000000;
     --foreground: #f5f5f7;
-    --primary: #0a84ff;
+    --primary: #2997ff;
     --primary-foreground: #ffffff;
-    --secondary: #121217;
-    --secondary-foreground: #f1f5f9;
+    --secondary: #1c1c1e;
+    --secondary-foreground: #f5f5f7;
     --muted: #1c1c1e;
     --muted-foreground: #98989d;
     --accent: #2c2c2e;
-    --accent-foreground: #f1f5f9;
+    --accent-foreground: #f5f5f7;
     --destructive: #ff453a;
     --destructive-foreground: #ffffff;
-    --border: #2c2c2e;
+    --border: #38383a;
     --input: #1c1c1e;
-    --ring: #0a84ff;
-    --card: #121217;
+    --ring: #2997ff;
+    --card: #1c1c1e;
     --card-foreground: #f5f5f7;
-    --popover: #121217;
+    --popover: #1c1c1e;
     --popover-foreground: #f5f5f7;
   }
 }
@@ -102,24 +102,63 @@
 /* 浅色模式变量 */
 .light {
   --background: #ffffff;
-  --foreground: #171717;
-  --primary: #3b82f6;
+  --foreground: #1d1d1f;
+  --primary: #0071e3;
   --primary-foreground: #ffffff;
-  --secondary: #f1f5f9;
-  --secondary-foreground: #0f172a;
-  --muted: #f3f4f6;
-  --muted-foreground: #6b7280;
-  --accent: #f3f4f6;
-  --accent-foreground: #171717;
-  --destructive: #ef4444;
+  --secondary: #f5f5f7;
+  --secondary-foreground: #1d1d1f;
+  --muted: #f5f5f7;
+  --muted-foreground: #86868b;
+  --accent: #e8e8ed;
+  --accent-foreground: #1d1d1f;
+  --destructive: #ff3b30;
   --destructive-foreground: #ffffff;
-  --border: #e5e7eb;
+  --border: #d2d2d7;
   --input: #ffffff;
-  --ring: #3b82f6;
+  --ring: #0071e3;
   --card: #ffffff;
-  --card-foreground: #171717;
+  --card-foreground: #1d1d1f;
   --popover: #ffffff;
-  --popover-foreground: #171717;
+  --popover-foreground: #1d1d1f;
+}
+
+/* Utility Classes for Glassmorphism & Apple Style */
+.glass {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass {
+  background: rgba(28, 28, 30, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.05);
+}
+
+.dark .glass-card {
+  background: rgba(28, 28, 30, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.2);
+}
+
+.shadow-apple {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+}
+
+.shadow-apple-hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
+}
+
+.text-balance {
+  text-wrap: balance;
 }
 
 /* 全局过渡效果 */

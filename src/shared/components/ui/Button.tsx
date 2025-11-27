@@ -21,24 +21,24 @@ export const Button: React.FC<ButtonProps> = ({
   isLoading = false,
   ...props
 }) => {
-  const baseStyles = 'rounded-lg font-medium transition-all duration-200 flex items-center justify-center gap-2';
-  
+  const baseStyles = 'rounded-full font-medium transition-all duration-300 flex items-center justify-center gap-2 active:scale-95 disabled:opacity-50 disabled:pointer-events-none select-none';
+
   const variantStyles = {
-    default: 'bg-blue-600 hover:bg-blue-700 text-white',
-    outline: 'border border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800',
-    ghost: 'hover:bg-gray-100 dark:hover:bg-gray-800',
-    glass: 'bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20'
+    default: 'bg-[#0071e3] hover:bg-[#0077ED] text-white shadow-sm hover:shadow-md',
+    outline: 'border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-50 dark:hover:bg-neutral-800 text-foreground',
+    ghost: 'hover:bg-neutral-100 dark:hover:bg-neutral-800 text-foreground/80 hover:text-foreground',
+    glass: 'glass hover:bg-white/80 dark:hover:bg-white/10 text-foreground border-white/20 shadow-sm'
   };
-  
+
   const sizeStyles = {
-    sm: 'px-4 py-2 text-sm',
-    md: 'px-6 py-3 text-base',
-    lg: 'px-8 py-4 text-lg'
+    sm: 'px-4 py-1.5 text-sm',
+    md: 'px-6 py-2.5 text-[15px]',
+    lg: 'px-8 py-3.5 text-[17px]'
   };
-  
+
   return (
     <Component
-      className={`${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className} ${isLoading ? 'opacity-70 cursor-not-allowed' : ''}`}
+      className={`${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className || ''} ${isLoading ? 'opacity-70 cursor-not-allowed' : ''}`}
       disabled={isLoading || props.disabled}
       {...props}
     >
