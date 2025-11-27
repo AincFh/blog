@@ -12,7 +12,7 @@ const nextConfig = {
   },
   experimental: {
     serverActions: {
-      allowedOrigins: ['localhost:3000']
+      allowedOrigins: ['localhost:3000', '*.pages.dev', 'aincfh.dpdns.org']
     }
   },
   // Cloudflare Pages 优化设置
