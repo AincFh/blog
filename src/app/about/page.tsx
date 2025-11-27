@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Button } from "@/shared/components/ui/Button";
 import { Github, Twitter, Mail, Code, Coffee, Globe } from "lucide-react";
 
-export const runtime = "edge";
+
 
 export default function AboutPage() {
   return (

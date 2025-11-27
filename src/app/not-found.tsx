@@ -4,8 +4,6 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import ScrollReveal from "@/shared/components/ScrollReveal";
 
-export const runtime = "edge";
-
 export default function NotFound() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });

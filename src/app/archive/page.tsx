@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Calendar } from "lucide-react";
 
-export const runtime = "edge";
+
 
 export default function ArchivePage() {
   const archives = [
