@@ -1,3 +1,5 @@
+export const runtime = 'edge';
+
 "use client";
 
 import { useState } from 'react';
@@ -22,7 +24,7 @@ interface Tag {
 }
 
 const mockCategories: Category[] = [
-    { id: '1', name: '技术', slug: 'tech', description: '技术相关文章', postCount: 45, color: 'blue' },
+    { id: '1', name: '技�?, slug: 'tech', description: '技术相关文�?, postCount: 45, color: 'blue' },
     { id: '2', name: '设计', slug: 'design', description: '设计相关内容', postCount: 23, color: 'purple' },
     { id: '3', name: '生活', slug: 'life', description: '生活随笔', postCount: 18, color: 'green' },
 ];
@@ -41,13 +43,13 @@ export default function CategoriesTagsPage() {
     const [showTagModal, setShowTagModal] = useState(false);
 
     const deleteCategory = (id: string) => {
-        if (confirm('确定要删除这个分类吗？')) {
+        if (confirm('确定要删除这个分类吗�?)) {
             setCategories(categories.filter(c => c.id !== id));
         }
     };
 
     const deleteTag = (id: string) => {
-        if (confirm('确定要删除这个标签吗？')) {
+        if (confirm('确定要删除这个标签吗�?)) {
             setTags(tags.filter(t => t.id !== id));
         }
     };
@@ -56,7 +58,7 @@ export default function CategoriesTagsPage() {
         <div className="space-y-6">
             {/* Header */}
             <div>
-                <h1 className="text-3xl font-bold text-white mb-2">分类与标签</h1>
+                <h1 className="text-3xl font-bold text-white mb-2">分类与标�?/h1>
                 <p className="text-neutral-400">管理文章的分类和标签系统</p>
             </div>
 
@@ -96,7 +98,7 @@ export default function CategoriesTagsPage() {
                                     </div>
                                     <div className="flex items-center gap-2">
                                         <span className="px-2 py-1 rounded-lg bg-neutral-700/50 text-xs text-neutral-400">
-                                            {category.postCount} 篇
+                                            {category.postCount} �?
                                         </span>
                                         <button className="p-2 rounded-lg hover:bg-neutral-700 opacity-0 group-hover:opacity-100 transition-opacity">
                                             <Edit className="w-4 h-4 text-neutral-400" />
@@ -209,3 +211,4 @@ export default function CategoriesTagsPage() {
         </div>
     );
 }
+

@@ -1,3 +1,5 @@
+export const runtime = 'edge';
+
 import { NextRequest, NextResponse } from 'next/server'
 import { searchLexicon } from '@/shared/services/ai/lexicon'
 

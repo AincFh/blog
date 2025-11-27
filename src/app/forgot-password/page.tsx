@@ -1,3 +1,5 @@
+export const runtime = 'edge';
+
 "use client";
 
 import { useState, useEffect } from "react";
@@ -34,8 +36,7 @@ export default function ForgotPasswordPage() {
     setIsEmailValid(!error);
   };
 
-  // 倒计时效果
-  useEffect(() => {
+  // 倒计时效�?  useEffect(() => {
     if (countdown > 0) {
       const timer = setTimeout(() => {
         setCountdown(countdown - 1);
@@ -61,11 +62,11 @@ export default function ForgotPasswordPage() {
     setIsLoading(true);
     
     try {
-      setSuccessMessage("密码重置邮件已发送，请检查您的邮箱");
+      setSuccessMessage("密码重置邮件已发送，请检查您的邮�?);
       setIsEmailSent(true);
       setCountdown(60);
     } catch (err) {
-      setError("发送邮件失败，请稍后重试");
+      setError("发送邮件失败，请稍后重�?);
     } finally {
       setIsLoading(false);
     }
@@ -81,10 +82,10 @@ export default function ForgotPasswordPage() {
     setIsLoading(true);
     
     try {
-      setSuccessMessage("密码重置邮件已重新发送，请检查您的邮箱");
+      setSuccessMessage("密码重置邮件已重新发送，请检查您的邮�?);
       setCountdown(60);
     } catch (err) {
-      setError("重新发送邮件失败，请稍后重试");
+      setError("重新发送邮件失败，请稍后重�?);
     } finally {
       setIsLoading(false);
     }
@@ -92,7 +93,7 @@ export default function ForgotPasswordPage() {
 
   return (
     <main className="py-8">
-      {/* 动态背景装饰 */}
+      {/* 动态背景装�?*/}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
@@ -125,8 +126,7 @@ export default function ForgotPasswordPage() {
                 忘记密码
               </h1>
               <p className="text-white/80">
-                输入您的邮箱，我们将发送重置链接
-              </p>
+                输入您的邮箱，我们将发送重置链�?              </p>
             </div>
 
             {/* 成功提示 */}
@@ -202,8 +202,7 @@ export default function ForgotPasswordPage() {
                         <svg className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
-                        发送重置链接
-                      </span>
+                        发送重置链�?                      </span>
                     )}
                   </button>
                 </div>
@@ -217,17 +216,14 @@ export default function ForgotPasswordPage() {
                     </svg>
                   </div>
                   <h2 className="text-2xl font-bold text-white mb-4">
-                    邮件已发送
-                  </h2>
+                    邮件已发�?                  </h2>
                   <p className="text-white/80 mb-6">
-                    我们已向 <span className="font-medium text-white">{email}</span> 发送了密码重置链接。请检查您的邮箱（包括垃圾邮件文件夹）并点击链接重置密码。
-                  </p>
+                    我们已向 <span className="font-medium text-white">{email}</span> 发送了密码重置链接。请检查您的邮箱（包括垃圾邮件文件夹）并点击链接重置密码�?                  </p>
                 </div>
 
                 <div className="text-center">
                   <p className="text-sm text-white/70 mb-4">
-                    没有收到邮件？
-                  </p>
+                    没有收到邮件�?                  </p>
                   <button
                     onClick={handleResendEmail}
                     disabled={countdown > 0 || isLoading}
@@ -243,7 +239,7 @@ export default function ForgotPasswordPage() {
                       </span>
                     ) : (
                       <span>
-                        {countdown > 0 ? `重新发送 (${countdown}s)` : "重新发送邮件"}
+                        {countdown > 0 ? `重新发�?(${countdown}s)` : "重新发送邮�?}
                       </span>
                     )}
                   </button>

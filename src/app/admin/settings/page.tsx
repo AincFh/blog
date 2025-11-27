@@ -1,3 +1,5 @@
+export const runtime = 'edge';
+
 "use client";
 
 import { useState } from 'react';
@@ -30,8 +32,8 @@ export default function AdminSettingsPage() {
         },
         general: {
             siteTitle: 'My Awesome Blog',
-            siteDescription: '分享技术与生活的点滴',
-            siteKeywords: '博客,技术,生活',
+            siteDescription: '分享技术与生活的点�?,
+            siteKeywords: '博客,技�?生活',
             postsPerPage: 10,
             defaultPostStatus: 'published',
             autoSaveInterval: 60,
@@ -155,8 +157,7 @@ export default function AdminSettingsPage() {
                             设置
                         </h1>
                         <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">
-                            管理您的博客配置和偏好设置
-                        </p>
+                            管理您的博客配置和偏好设�?                        </p>
                     </div>
                     <div className="flex items-center gap-3">
                         {saveStatus === 'success' && (
@@ -187,7 +188,7 @@ export default function AdminSettingsPage() {
                             {saving ? (
                                 <>
                                     <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                                    保存中...
+                                    保存�?..
                                 </>
                             ) : (
                                 <>

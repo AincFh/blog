@@ -1,3 +1,5 @@
+export const runtime = 'edge';
+
 "use client";
 
 import React, { useState } from 'react';
@@ -9,10 +11,9 @@ import { Input } from '@/shared/components/ui/Input';
 import { User, Mail, MapPin, Globe, Save, Camera, Settings, LogOut } from 'lucide-react';
 
 export default function ProfilePage() {
-  // 个人资料状态
-  const [showAvatar, setShowAvatar] = useState(true);
+  // 个人资料状�?  const [showAvatar, setShowAvatar] = useState(true);
   const [bio, setBio] = useState('');
-  const [username, setUsername] = useState('用户名');
+  const [username, setUsername] = useState('用户�?);
   const [email, setEmail] = useState('user@example.com');
   const [location, setLocation] = useState('');
   const [website, setWebsite] = useState('');
@@ -40,8 +41,7 @@ export default function ProfilePage() {
             个人资料
           </h1>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            管理您的个人信息和社交资料
-          </p>
+            管理您的个人信息和社交资�?          </p>
         </motion.div>
 
         {/* 个人资料卡片 */}
@@ -79,7 +79,7 @@ export default function ProfilePage() {
               <div className="flex-1 space-y-4 text-center sm:text-left">
                 <div>
                   <h3 className="text-lg font-semibold text-foreground">头像设置</h3>
-                  <p className="text-sm text-muted-foreground">支持 JPG, PNG 格式，最大 2MB</p>
+                  <p className="text-sm text-muted-foreground">支持 JPG, PNG 格式，最�?2MB</p>
                 </div>
 
                 <div className="flex items-center justify-center sm:justify-start gap-4">
@@ -106,7 +106,7 @@ export default function ProfilePage() {
             {/* 基本表单 */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <Input
-                label="用户名"
+                label="用户�?
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 leftIcon={<User className="w-4 h-4" />}
@@ -121,7 +121,7 @@ export default function ProfilePage() {
               />
 
               <div className="md:col-span-2">
-                <label className="block text-sm font-medium text-foreground mb-2">个人简介</label>
+                <label className="block text-sm font-medium text-foreground mb-2">个人简�?/label>
                 <textarea
                   value={bio}
                   onChange={(e) => setBio(e.target.value)}
@@ -176,8 +176,7 @@ export default function ProfilePage() {
         >
           <Settings className="w-5 h-5 text-blue-600 dark:text-blue-400 mt-0.5 flex-shrink-0" />
           <p className="text-sm text-blue-600 dark:text-blue-400">
-            网站功能设置请前往 <Link href="/settings" className="font-medium underline underline-offset-4 hover:text-blue-700 dark:hover:text-blue-300">设置</Link> 页面进行管理。
-          </p>
+            网站功能设置请前往 <Link href="/settings" className="font-medium underline underline-offset-4 hover:text-blue-700 dark:hover:text-blue-300">设置</Link> 页面进行管理�?          </p>
         </motion.div>
 
         {/* 操作按钮 */}
@@ -194,12 +193,11 @@ export default function ProfilePage() {
             leftIcon={saved ? null : <Save className="w-4 h-4" />}
             className={saved ? "bg-green-600 hover:bg-green-700" : ""}
           >
-            {saved ? '已保存' : '保存个人资料'}
+            {saved ? '已保�? : '保存个人资料'}
           </Button>
 
           <Button variant="outline" size="lg" leftIcon={<LogOut className="w-4 h-4" />}>
-            退出登录
-          </Button>
+            退出登�?          </Button>
         </motion.div>
       </div>
     </main>

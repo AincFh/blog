@@ -1,3 +1,5 @@
+export const runtime = 'edge';
+
 // src/app/api/admin/entry/route.ts
 import { NextResponse } from 'next/server';
 
@@ -20,3 +22,4 @@ export async function POST(request: Request) {
     console.log('Admin entry POST payload:', body);
     return NextResponse.json({ message: 'Action received' }, { status: 200 });
 }
+

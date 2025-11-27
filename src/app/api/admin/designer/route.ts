@@ -1,3 +1,5 @@
+export const runtime = 'edge';
+
 // src/app/api/admin/designer/route.ts
 import { NextResponse } from 'next/server';
 import { withAuth } from '../auth';
@@ -41,3 +43,4 @@ async function postHandler(request: Request) {
 
 export const GET = withAuth(getHandler);
 export const POST = withAuth(postHandler);
+

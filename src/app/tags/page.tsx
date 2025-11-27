@@ -1,3 +1,5 @@
+export const runtime = 'edge';
+
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
@@ -82,8 +84,7 @@ export default function TagsPage() {
           className="text-center mb-16"
         >
           <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">
-            标签云
-          </h1>
+            标签�?          </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             按标签浏览所有文章，探索更多相关内容
           </p>
@@ -124,8 +125,7 @@ export default function TagsPage() {
                     }`}
                 >
                   <SortAsc className="w-4 h-4" />
-                  按热度
-                </button>
+                  按热�?                </button>
                 <button
                   onClick={() => setSortBy("name")}
                   className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all ${sortBy === "name"
@@ -134,8 +134,7 @@ export default function TagsPage() {
                     }`}
                 >
                   <SortAsc className="w-4 h-4" />
-                  按名称
-                </button>
+                  按名�?                </button>
               </div>
             </motion.div>
 
@@ -184,8 +183,7 @@ export default function TagsPage() {
 
               {/* Stats */}
               <div className="mt-8 text-center text-sm text-muted-foreground">
-                共 <span className="font-bold text-primary">{filteredTags.length}</span> 个标签
-                {searchQuery && ` · 筛选自 ${tags.length} 个标签`}
+                �?<span className="font-bold text-primary">{filteredTags.length}</span> 个标�?                {searchQuery && ` · 筛选自 ${tags.length} 个标签`}
               </div>
             </motion.section>
 
@@ -211,8 +209,7 @@ export default function TagsPage() {
                             {tags.find(t => t.id === selectedTag)?.name} 标签
                           </h2>
                           <p className="text-sm text-muted-foreground">
-                            共 {tagPosts.length} 篇文章
-                          </p>
+                            �?{tagPosts.length} 篇文�?                          </p>
                         </div>
                       </div>
                       <Link

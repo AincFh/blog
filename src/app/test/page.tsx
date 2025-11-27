@@ -1,3 +1,5 @@
+export const runtime = 'edge';
+
 "use client";
 
 import { useState } from "react";
@@ -32,36 +34,36 @@ export default function TestPage() {
         
         <div className="space-y-8">
           <section>
-            <h2 className="text-xl font-semibold mb-4">搜索框测试</h2>
-            <p>点击右上角的搜索图标，应该会展开搜索框。</p>
+            <h2 className="text-xl font-semibold mb-4">搜索框测�?/h2>
+            <p>点击右上角的搜索图标，应该会展开搜索框�?/p>
           </section>
           
           <section>
             <h2 className="text-xl font-semibold mb-4">用户头像测试</h2>
-            <p>点击右上角的用户头像，应该会展开下拉菜单。鼠标悬停时应该有缩放效果。</p>
+            <p>点击右上角的用户头像，应该会展开下拉菜单。鼠标悬停时应该有缩放效果�?/p>
           </section>
           
           <section>
             <h2 className="text-xl font-semibold mb-4">AI助手测试</h2>
-            <p>1. 点击右下角的AI助手按钮，应该会打开AI助手面板。</p>
-            <p>2. 点击用户头像菜单中的"AI助手"选项，也应该会打开AI助手面板。</p>
-            <p>3. AI助手按钮应该有悬停效果。</p>
+            <p>1. 点击右下角的AI助手按钮，应该会打开AI助手面板�?/p>
+            <p>2. 点击用户头像菜单中的"AI助手"选项，也应该会打开AI助手面板�?/p>
+            <p>3. AI助手按钮应该有悬停效果�?/p>
           </section>
           
           <section>
             <h2 className="text-xl font-semibold mb-4">主题切换测试</h2>
-            <p>点击右下角的太阳/月亮图标，应该会切换主题。</p>
+            <p>点击右下角的太阳/月亮图标，应该会切换主题�?/p>
           </section>
           
           <section>
             <h2 className="text-xl font-semibold mb-4">页面宽度测试</h2>
-            <p>页面内容宽度应该比之前更窄（从max-w-6xl改为max-w-5xl）。</p>
+            <p>页面内容宽度应该比之前更窄（从max-w-6xl改为max-w-5xl）�?/p>
           </section>
         </div>
         
         <div className="mt-12 p-6 bg-neutral-100 dark:bg-neutral-800 rounded-lg">
           <h3 className="text-lg font-medium mb-2">测试内容区域</h3>
-          <p>这是一个测试内容区域，用于验证页面宽度的变化。页面内容宽度应该比之前更窄。</p>
+          <p>这是一个测试内容区域，用于验证页面宽度的变化。页面内容宽度应该比之前更窄�?/p>
         </div>
       </main>
       

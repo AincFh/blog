@@ -1,3 +1,5 @@
+export const runtime = 'edge';
+
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -50,7 +52,7 @@ export default function SettingsPage() {
   const tabs = [
     { id: 'appearance', label: '外观', icon: Palette, gradient: 'from-purple-500 to-pink-500' },
     { id: 'notifications', label: '通知', icon: Bell, gradient: 'from-orange-500 to-amber-500' },
-    { id: 'editor', label: '编辑器', icon: Edit3, gradient: 'from-green-500 to-emerald-500' },
+    { id: 'editor', label: '编辑�?, icon: Edit3, gradient: 'from-green-500 to-emerald-500' },
     { id: 'security', label: '安全', icon: Lock, gradient: 'from-red-500 to-rose-500' }
   ] as const;
 
@@ -67,7 +69,7 @@ export default function SettingsPage() {
             设置中心
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            自定义您的博客体验，管理偏好和功能设置
+            自定义您的博客体验，管理偏好和功能设�?
           </p>
         </motion.header>
 
@@ -157,7 +159,7 @@ export default function SettingsPage() {
                 </div>
                 <div>
                   <h2 className="text-2xl font-bold text-foreground">通知设置</h2>
-                  <p className="text-sm text-muted-foreground">管理通知提醒和消息推送</p>
+                  <p className="text-sm text-muted-foreground">管理通知提醒和消息推�?/p>
                 </div>
               </div>
 
@@ -202,22 +204,22 @@ export default function SettingsPage() {
                   <Edit3 className="w-6 h-6" />
                 </div>
                 <div>
-                  <h2 className="text-2xl font-bold text-foreground">编辑器设置</h2>
-                  <p className="text-sm text-muted-foreground">配置编辑器功能和快捷键</p>
+                  <h2 className="text-2xl font-bold text-foreground">编辑器设�?/h2>
+                  <p className="text-sm text-muted-foreground">配置编辑器功能和快捷�?/p>
                 </div>
               </div>
 
               <ToggleOption
                 label="自动保存草稿"
-                description="编辑文章时自动保存草稿"
+                description="编辑文章时自动保存草�?
                 icon={<Save className="w-4 h-4 text-muted-foreground" />}
                 checked={autoSaveEnabled}
                 onChange={setAutoSaveEnabled}
               />
 
               <ToggleOption
-                label="键盘快捷键"
-                description="启用键直快捷键操作"
+                label="键盘快捷�?
+                description="启用键直快捷键操�?
                 icon={<Keyboard className="w-4 h-4 text-muted-foreground" />}
                 checked={keyboardShortcuts}
                 onChange={setKeyboardShortcuts}
@@ -234,7 +236,7 @@ export default function SettingsPage() {
                 </div>
                 <div>
                   <h2 className="text-2xl font-bold text-foreground">安全设置</h2>
-                  <p className="text-sm text-muted-foreground">管理密码和账户安全</p>
+                  <p className="text-sm text-muted-foreground">管理密码和账户安�?/p>
                 </div>
               </div>
 
@@ -247,7 +249,7 @@ export default function SettingsPage() {
                       </div>
                       <div>
                         <p className="font-medium text-foreground">更改密码</p>
-                        <p className="text-sm text-muted-foreground">定期更新密码以保证账户安全</p>
+                        <p className="text-sm text-muted-foreground">定期更新密码以保证账户安�?/p>
                       </div>
                     </div>
                     <ChevronRight className="w-5 h-5 text-muted-foreground group-hover:translate-x-1 transition-transform" />
@@ -264,7 +266,7 @@ export default function SettingsPage() {
                       </div>
                       <div>
                         <p className="font-medium text-foreground">账户绑定</p>
-                        <p className="text-sm text-muted-foreground">管理第三方账号绑定</p>
+                        <p className="text-sm text-muted-foreground">管理第三方账号绑�?/p>
                       </div>
                     </div>
                     <ChevronRight className="w-5 h-5 text-muted-foreground group-hover:translate-x-1 transition-transform" />
@@ -277,7 +279,7 @@ export default function SettingsPage() {
 
         {/* Info Banner */}
         <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-2xl p-4 mb-8 text-sm text-blue-700 dark:text-blue-300">
-          <p>个人资料相关设置请前往 <Link href="/profile" className="font-medium underline hover:text-blue-800 dark:hover:text-blue-200">个人资料</Link> 页面进行管理。</p>
+          <p>个人资料相关设置请前往 <Link href="/profile" className="font-medium underline hover:text-blue-800 dark:hover:text-blue-200">个人资料</Link> 页面进行管理�?/p>
         </div>
 
         {/* Save Button */}
@@ -289,7 +291,7 @@ export default function SettingsPage() {
             leftIcon={saved ? <CheckCircle className="w-5 h-5" /> : <Save className="w-5 h-5" />}
             className={`px-8 py-4 text-lg ${saved ? 'bg-green-600 hover:bg-green-700' : ''}`}
           >
-            {saved ? '已保存' : '保存设置'}
+            {saved ? '已保�? : '保存设置'}
           </Button>
         </div>
       </div>

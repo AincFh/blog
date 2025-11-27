@@ -1,3 +1,5 @@
+export const runtime = 'edge';
+
 "use client";
 
 import { useState, useEffect, Suspense } from "react";
@@ -8,8 +10,7 @@ import { Button } from "@/shared/components/ui/Button";
 import { Input } from "@/shared/components/ui/Input";
 import { Mail, Lock, Eye, EyeOff, LogIn, Github, ArrowRight } from "lucide-react";
 
-// SearchParams组件包装useSearchParams的使用
-function SearchParamsWrapper({ children }: { children: (params: ReturnType<typeof useSearchParams>) => React.ReactNode }) {
+// SearchParams组件包装useSearchParams的使�?function SearchParamsWrapper({ children }: { children: (params: ReturnType<typeof useSearchParams>) => React.ReactNode }) {
   const searchParams = useSearchParams();
   return children(searchParams);
 }
@@ -35,8 +36,8 @@ export default function LoginPage() {
   };
 
   const validatePassword = (password: string) => {
-    if (!password) return "请输入密码";
-    if (password.length < 6) return "密码长度至少为6位";
+    if (!password) return "请输入密�?;
+    if (password.length < 6) return "密码长度至少�?�?;
     return "";
   };
 
@@ -63,7 +64,7 @@ export default function LoginPage() {
       // 模拟API调用
       await new Promise(resolve => setTimeout(resolve, 1000));
 
-      setSuccessMessage("登录成功！正在跳转...");
+      setSuccessMessage("登录成功！正在跳�?..");
 
       if (typeof window !== 'undefined') {
         localStorage.setItem('isLoggedIn', 'true');
@@ -80,13 +81,13 @@ export default function LoginPage() {
   };
 
   return (
-    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">加载中...</div>}>
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">加载�?..</div>}>
       <SearchParamsWrapper>{
         (searchParams) => {
           useEffect(() => {
             const registered = searchParams.get('registered');
             if (registered === 'true') {
-              setSuccessMessage("注册成功！正在为您登录...");
+              setSuccessMessage("注册成功！正在为您登�?..");
               const timer = setTimeout(() => setSuccessMessage(""), 3000);
               return () => clearTimeout(timer);
             }
@@ -116,7 +117,7 @@ export default function LoginPage() {
                     <LogIn className="w-8 h-8" />
                   </motion.div>
                   <h1 className="text-3xl font-bold text-foreground mb-2">欢迎回来</h1>
-                  <p className="text-muted-foreground">登录您的账户以继续</p>
+                  <p className="text-muted-foreground">登录您的账户以继�?/p>
                 </div>
 
                 {successMessage && (
@@ -157,7 +158,7 @@ export default function LoginPage() {
                     <Input
                       label="密码"
                       type={showPassword ? "text" : "password"}
-                      placeholder="请输入密码"
+                      placeholder="请输入密�?
                       value={password}
                       onChange={(e) => {
                         setPassword(e.target.value);
@@ -185,14 +186,13 @@ export default function LoginPage() {
                         onChange={(e) => setRememberMe(e.target.checked)}
                         className="w-4 h-4 rounded border-border text-primary focus:ring-primary/20 transition-colors"
                       />
-                      <span className="text-muted-foreground group-hover:text-foreground transition-colors">记住我</span>
+                      <span className="text-muted-foreground group-hover:text-foreground transition-colors">记住�?/span>
                     </label>
                     <Link
                       href="/forgot-password"
                       className="text-primary hover:text-primary/80 font-medium transition-colors"
                     >
-                      忘记密码？
-                    </Link>
+                      忘记密码�?                    </Link>
                   </div>
 
                   <Button
@@ -212,7 +212,7 @@ export default function LoginPage() {
                       <div className="w-full border-t border-border/50"></div>
                     </div>
                     <div className="relative flex justify-center text-xs uppercase">
-                      <span className="bg-background px-2 text-muted-foreground">或使用以下方式</span>
+                      <span className="bg-background px-2 text-muted-foreground">或使用以下方�?/span>
                     </div>
                   </div>
 

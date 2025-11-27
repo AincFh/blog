@@ -1,3 +1,5 @@
+export const runtime = 'edge';
+
 "use client";
 
 import { useState, useEffect } from 'react';
@@ -29,9 +31,9 @@ interface Post {
 // Mock Data
 const MOCK_POSTS: Post[] = Array.from({ length: 25 }).map((_, i) => ({
     id: `post-${i + 1}`,
-    title: `Next.js 14 全栈开发实战指南 (第 ${i + 1} 部分)`,
+    title: `Next.js 14 全栈开发实战指�?(�?${i + 1} 部分)`,
     author: 'Admin',
-    category: i % 3 === 0 ? '技术' : i % 3 === 1 ? '生活' : '随笔',
+    category: i % 3 === 0 ? '技�? : i % 3 === 1 ? '生活' : '随笔',
     status: i % 5 === 0 ? 'draft' : 'published',
     views: Math.floor(Math.random() * 10000),
     comments: Math.floor(Math.random() * 100),
@@ -80,7 +82,7 @@ export default function PostsPage() {
             header: '分类',
             width: '10%',
             render: (post: Post) => (
-                <span className={`px-2 py-1 rounded-full text-xs font-medium ${post.category === '技术' ? 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400' :
+                <span className={`px-2 py-1 rounded-full text-xs font-medium ${post.category === '技�? ? 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400' :
                         post.category === '生活' ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400' :
                             'bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-400'
                     }`}>
@@ -90,7 +92,7 @@ export default function PostsPage() {
         },
         {
             key: 'status',
-            header: '状态',
+            header: '状�?,
             width: '10%',
             render: (post: Post) => (
                 <span className={`flex items-center gap-1.5 text-xs font-medium ${post.status === 'published' ? 'text-green-600 dark:text-green-400' :
@@ -101,8 +103,8 @@ export default function PostsPage() {
                             post.status === 'draft' ? 'bg-amber-500' :
                                 'bg-gray-500'
                         }`} />
-                    {post.status === 'published' ? '已发布' :
-                        post.status === 'draft' ? '草稿' : '已归档'}
+                    {post.status === 'published' ? '已发�? :
+                        post.status === 'draft' ? '草稿' : '已归�?}
                 </span>
             ),
             sortable: true
@@ -150,7 +152,7 @@ export default function PostsPage() {
                         title="删除"
                         onClick={(e) => {
                             e.stopPropagation();
-                            if (confirm('确定要删除这篇文章吗？')) {
+                            if (confirm('确定要删除这篇文章吗�?)) {
                                 // Delete logic
                             }
                         }}
@@ -178,7 +180,7 @@ export default function PostsPage() {
                     className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white"
                 >
                     <Plus className="w-4 h-4" />
-                    写文章
+                    写文�?
                 </Button>
             </div>
 
@@ -192,3 +194,4 @@ export default function PostsPage() {
         </div>
     );
 }
+
