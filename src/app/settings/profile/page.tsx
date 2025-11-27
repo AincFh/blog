@@ -1,6 +1,5 @@
-export const runtime = 'edge';
-
 "use client";
+export const runtime = 'edge';
 
 export default function ProfileSettingsPage() {
   return (

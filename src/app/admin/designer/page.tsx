@@ -1,8 +1,7 @@
+"use client";
 export const runtime = 'edge';
 
 // src/app/admin/designer/page.tsx
-"use client";
-
 import { useEffect, useState } from 'react';
 import { Loader2 } from 'lucide-react';
 import { Button } from '@/shared/components/ui/Button';

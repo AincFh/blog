@@ -1,6 +1,5 @@
-export const runtime = 'edge';
-
 "use client";
+export const runtime = 'edge';
 
 import React, { useState } from 'react';
 import ScrollReveal from '@/shared/components/ScrollReveal';
@@ -230,7 +229,7 @@ export default function SecurityPage() {
                   </div>
                   <div>
                     <p className="text-neutral-700 dark:text-neutral-300 font-medium">GitHub</p>
-                    <p className="text-sm text-neutral-500 dark:text-neutral-400">未绑�?/p>
+                    <p className="text-sm text-neutral-500 dark:text-neutral-400">未绑定</p>
                   </div>
                 </div>
                 <button className="px-4 py-2 bg-blue-50 hover:bg-blue-100 dark:bg-blue-900/20 dark:hover:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-lg text-sm font-medium transition-colors">
@@ -248,7 +247,7 @@ export default function SecurityPage() {
                   </div>
                   <div>
                     <p className="text-neutral-700 dark:text-neutral-300 font-medium">Google</p>
-                    <p className="text-sm text-neutral-500 dark:text-neutral-400">未绑�?/p>
+                    <p className="text-sm text-neutral-500 dark:text-neutral-400">未绑定</p>
                   </div>
                 </div>
                 <button className="px-4 py-2 bg-blue-50 hover:bg-blue-100 dark:bg-blue-900/20 dark:hover:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-lg text-sm font-medium transition-colors">

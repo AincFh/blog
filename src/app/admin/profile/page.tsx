@@ -1,6 +1,6 @@
+"use client";
 export const runtime = 'edge';
 
-"use client";
 // Next.js 13 admin profile page with API integration
 import { useState, useRef, useEffect } from 'react';
 import { User, Mail, Shield, Key, Camera, MapPin, Phone, Globe, Github, Twitter, Save, Loader2 } from 'lucide-react';

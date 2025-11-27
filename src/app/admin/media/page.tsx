@@ -1,7 +1,6 @@
-export const runtime = 'edge';
-
 "use client";
-
+export const runtime = 'edge';
+ 
 import { useState } from 'react';
 import { Upload, Image as ImageIcon, Video, File, Search, Trash2, Copy, Download, Grid, List } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';

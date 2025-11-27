@@ -1,6 +1,5 @@
-export const runtime = 'edge';
-
 "use client";
+export const runtime = 'edge';
 
 import { useState } from 'react';
 import { Plus, Edit, Trash2, GripVertical, FolderOpen, Hash } from 'lucide-react';
