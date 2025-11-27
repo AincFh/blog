@@ -1,5 +1,4 @@
 "use client";
-export const runtime = 'edge';
 
 import { useState, useEffect } from "react";
 import { PostService } from "@/shared/services/post-service";

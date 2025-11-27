@@ -138,7 +138,7 @@ export default function ArticleListWithPreload({
   };
 
   return (
-    <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ${className}`}>
+    <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 ${className}`}>
       {articles.map((article, index) => (
         <ScrollRevealWithPreload
           key={article.id}
@@ -162,13 +162,13 @@ export default function ArticleListWithPreload({
         </ScrollRevealWithPreload>
       ))}
 
-      {/* 加载指示器 */}
+      {/* 加载指示器 - 极简风格 */}
       {isLoading && (
-        <div className="col-span-full flex justify-center py-8">
+        <div className="col-span-full flex justify-center py-12">
           <div className="flex items-center space-x-2">
-            <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
-            <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
-            <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
+            <div className="w-2.5 h-2.5 bg-neutral-300 dark:bg-neutral-700 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
+            <div className="w-2.5 h-2.5 bg-neutral-300 dark:bg-neutral-700 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
+            <div className="w-2.5 h-2.5 bg-neutral-300 dark:bg-neutral-700 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
           </div>
         </div>
       )}
