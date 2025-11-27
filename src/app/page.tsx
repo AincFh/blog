@@ -8,8 +8,6 @@ import { motion } from "framer-motion";
 import { Button } from "@/shared/components/ui/Button";
 import { ArrowRight, Code, Palette, BookOpen } from "lucide-react";
 
-export const runtime = "edge";
-
 export default function Home() {
   const [headlineIndex, setHeadlineIndex] = useState(0);
   const headlines = ["欢迎来到我的博客", "探索技术与创意", "记录成长与灵感"];
