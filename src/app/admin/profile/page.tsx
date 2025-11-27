@@ -92,7 +92,7 @@ export default function AdminProfilePage() {
             <div className="flex items-center justify-between">
                 <div>
                     <h1 className="text-3xl font-bold mb-2 text-gray-900 dark:text-white">个人资料</h1>
-                    <p className="text-gray-500 dark:text-gray-400">管理您的个人信息和账户设�?/p>
+                    <p className="text-gray-500 dark:text-gray-400">管理您的个人信息和账户设置</p>
                 </div>
                 <Button onClick={handleSave} disabled={isSaving} className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6">
                     {isSaving ? <Loader2 className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />}
@@ -120,8 +120,8 @@ export default function AdminProfilePage() {
                         <h2 className="text-2xl font-bold mb-1 text-gray-900 dark:text-white">{profile.username}</h2>
                         <p className="text-blue-600 dark:text-blue-400 font-medium mb-4">{profile.role}</p>
                         <div className="flex gap-2 mb-6">
-                            <span className="px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-700 dark:bg-green-500/20 dark:text-green-400 border border-green-200 dark:border-green-500/30">已验�?/span>
-                            <span className="px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-700 dark:bg-blue-500/20 dark:text-blue-400 border border-blue-200 dark:border-blue-500/30">活跃状�?/span>
+                            <span className="px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-700 dark:bg-green-500/20 dark:text-green-400 border border-green-200 dark:border-green-500/30">已验证</span>
+                            <span className="px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-700 dark:bg-blue-500/20 dark:text-blue-400 border border-blue-200 dark:border-blue-500/30">活跃状态</span>
                         </div>
                         <div className="w-full pt-6 border-t border-gray-100 dark:border-white/5 flex justify-center gap-4">
                             <button className="p-2 rounded-full bg-gray-50 dark:bg-white/5 text-gray-600 dark:text-gray-400 hover:bg-blue-50 dark:hover:bg-blue-500/20 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
@@ -151,14 +151,14 @@ export default function AdminProfilePage() {
                                 <Key className="w-4 h-4 text-gray-500" />
                                 <div className="text-left">
                                     <div className="font-medium text-gray-900 dark:text-white">修改密码</div>
-                                    <div className="text-xs text-gray-500">上次修改�?个月�?/div>
+                                    <div className="text-xs text-gray-500">上次修改3个月前</div>
                                 </div>
                             </Button>
                             <Button variant="outline" className="w-full justify-start gap-3 h-12 border-gray-200 dark:border-white/10 hover:bg-gray-50 dark:hover:bg-white/5">
                                 <Shield className="w-4 h-4 text-gray-500" />
                                 <div className="text-left">
                                     <div className="font-medium text-gray-900 dark:text-white">双重认证</div>
-                                    <div className="text-xs text-green-500">已开�?/div>
+                                    <div className="text-xs text-green-500">已开启</div>
                                 </div>
                             </Button>
                         </div>
@@ -177,7 +177,7 @@ export default function AdminProfilePage() {
                         <h3 className="text-lg font-semibold mb-6 text-gray-900 dark:text-white">基本信息</h3>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="space-y-2">
-                                <label className="text-sm font-medium text-gray-700 dark:text-gray-300">用户�?/label>
+                                <label className="text-sm font-medium text-gray-700 dark:text-gray-300">用户名</label>
                                 <div className="relative">
                                     <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                                     <input
@@ -201,7 +201,7 @@ export default function AdminProfilePage() {
                                 </div>
                             </div>
                             <div className="md:col-span-2 space-y-2">
-                                <label className="text-sm font-medium text-gray-700 dark:text-gray-300">个人简�?/label>
+                                <label className="text-sm font-medium text-gray-700 dark:text-gray-300">个人简介</label>
                                 <textarea
                                     rows={4}
                                     value={profile.bio}
@@ -235,7 +235,7 @@ export default function AdminProfilePage() {
                                 </div>
                             </div>
                             <div className="space-y-2">
-                                <label className="text-sm font-medium text-gray-700 dark:text-gray-300">所在地�?/label>
+                                <label className="text-sm font-medium text-gray-700 dark:text-gray-300">所在地区</label>
                                 <div className="relative">
                                     <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                                     <input
@@ -302,4 +302,3 @@ export default function AdminProfilePage() {
         </div>
     );
 }
-

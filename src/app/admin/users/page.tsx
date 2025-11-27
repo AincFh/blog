@@ -49,7 +49,7 @@ export default function UsersPage() {
     const columns: Column<User>[] = [
         {
             key: 'username',
-            header: '用户�?,
+            header: '用户名',
             sortable: true,
             render: (user) => (
                 <div className="flex items-center gap-3">
@@ -68,33 +68,33 @@ export default function UsersPage() {
             header: '角色',
             render: (user) => (
                 <span className={`px-2 py-1 rounded-lg text-xs ${user.role === 'admin'
-                        ? 'bg-purple-900/30 text-purple-400'
-                        : 'bg-blue-900/30 text-blue-400'
+                    ? 'bg-purple-900/30 text-purple-400'
+                    : 'bg-blue-900/30 text-blue-400'
                     }`}>
-                    {user.role === 'admin' ? '管理�? : '用户'}
+                    {user.role === 'admin' ? '管理员' : '用户'}
                 </span>
             )
         },
         {
             key: 'status',
-            header: '状�?,
+            header: '状态',
             render: (user) => (
                 <span className={`px-2 py-1 rounded-lg text-xs ${user.status === 'active'
-                        ? 'bg-green-900/30 text-green-400'
-                        : 'bg-red-900/30 text-red-400'
+                    ? 'bg-green-900/30 text-green-400'
+                    : 'bg-red-900/30 text-red-400'
                     }`}>
-                    {user.status === 'active' ? '正常' : '已禁�?}
+                    {user.status === 'active' ? '正常' : '已禁用'}
                 </span>
             )
         },
         {
             key: 'postsCount',
-            header: '文章�?,
+            header: '文章数',
             sortable: true,
         },
         {
             key: 'commentsCount',
-            header: '评论�?,
+            header: '评论数',
             sortable: true,
         },
         {
@@ -123,7 +123,7 @@ export default function UsersPage() {
             {/* Header */}
             <div>
                 <h1 className="text-3xl font-bold text-white mb-2">用户管理</h1>
-                <p className="text-neutral-400">管理所有注册用�?/p>
+                <p className="text-neutral-400">管理所有注册用户</p>
             </div>
 
             {/* Stats */}
@@ -133,7 +133,7 @@ export default function UsersPage() {
                     <div className="text-2xl font-bold text-white">{users.length}</div>
                 </div>
                 <div className="bg-neutral-900 rounded-xl p-4 border border-neutral-800">
-                    <div className="text-sm text-neutral-400 mb-1">管理�?/div>
+                    <div className="text-sm text-neutral-400 mb-1">管理员</div>
                     <div className="text-2xl font-bold text-white">
                         {users.filter(u => u.role === 'admin').length}
                     </div>
@@ -154,4 +154,3 @@ export default function UsersPage() {
         </div>
     );
 }
-

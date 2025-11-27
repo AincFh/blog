@@ -2,12 +2,12 @@ export const runtime = 'edge';
 
 import { NextRequest, NextResponse } from 'next/server';
 
-// 模拟用户数据库（生产环境应使用真实数据库�?
+// 模拟用户数据库（生产环境应使用真实数据库）
 const MOCK_USERS = [
     {
         id: '1',
         email: process.env.DEV_ADMIN_EMAIL || 'admin@blog.com',
-        // 这是 'admin123' 的bcrypt哈希值示�?
+        // 这是 'admin123' 的bcrypt哈希值示例
         // 生产环境必须使用真实的bcrypt.hash()
         passwordHash: '$2b$10$rO5gJLqLZqxqKhHvY5qJ0.eZ5Y9xQYxNVqLm8TKZqxqKhHvY5qJ0e',
         username: 'Admin',
@@ -15,12 +15,12 @@ const MOCK_USERS = [
     }
 ];
 
-// 简化的密码验证（生产环境应使用bcrypt.compare�?
+// 简化的密码验证（生产环境应使用bcrypt.compare）
 function verifyPassword(password: string, hash: string): boolean {
     // TODO: 生产环境必须使用 bcrypt.compare(password, hash)
-    // 这里仅用于演�?
+    // 这里仅用于演示
     if (process.env.NODE_ENV === 'development') {
-        // 开发环境简单验�?
+        // 开发环境简单验证
         return password === (process.env.DEV_ADMIN_PASSWORD || 'admin123');
     }
     return false;
@@ -32,7 +32,7 @@ function generateToken(userId: string): string {
     const payload = {
         userId,
         iat: Date.now(),
-        exp: Date.now() + 7 * 24 * 60 * 60 * 1000 // 7�?
+        exp: Date.now() + 7 * 24 * 60 * 60 * 1000 // 7天
     };
     return Buffer.from(JSON.stringify(payload)).toString('base64');
 }
@@ -45,7 +45,7 @@ export async function POST(request: NextRequest) {
         // 输入验证
         if (!email || !password) {
             return NextResponse.json(
-                { error: '邮箱和密码不能为�? },
+                { error: '邮箱和密码不能为空' },
                 { status: 400 }
             );
         }
@@ -54,7 +54,7 @@ export async function POST(request: NextRequest) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
             return NextResponse.json(
-                { error: '邮箱格式不正�? },
+                { error: '邮箱格式不正确' },
                 { status: 400 }
             );
         }
@@ -63,9 +63,9 @@ export async function POST(request: NextRequest) {
         const user = MOCK_USERS.find(u => u.email === email);
 
         if (!user) {
-            // 安全：不要泄露用户是否存�?
+            // 安全：不要泄露用户是否存在
             return NextResponse.json(
-                { error: '邮箱或密码错�? },
+                { error: '邮箱或密码错误' },
                 { status: 401 }
             );
         }
@@ -75,15 +75,15 @@ export async function POST(request: NextRequest) {
 
         if (!isValid) {
             return NextResponse.json(
-                { error: '邮箱或密码错�? },
+                { error: '邮箱或密码错误' },
                 { status: 401 }
             );
         }
 
-        // 检查权�?
+        // 检查权限
         if (user.role !== 'admin') {
             return NextResponse.json(
-                { error: '无权限访�? },
+                { error: '无权限访问' },
                 { status: 403 }
             );
         }
@@ -91,7 +91,7 @@ export async function POST(request: NextRequest) {
         // 生成Token
         const token = generateToken(user.id);
 
-        // 返回用户信息（不包含密码哈希�?
+        // 返回用户信息（不包含密码哈希）
         const userInfo = {
             id: user.id,
             email: user.email,
@@ -108,9 +108,8 @@ export async function POST(request: NextRequest) {
     } catch (error) {
         console.error('Login error:', error);
         return NextResponse.json(
-            { error: '服务器错�? },
+            { error: '服务器错误' },
             { status: 500 }
         );
     }
 }
-
