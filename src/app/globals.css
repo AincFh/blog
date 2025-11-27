@@ -420,11 +420,11 @@ html {
   border-color: var(--border) !important;
 }
 
-.dark .hover\\:bg-gray-50:hover {
+.dark .hover\:bg-gray-50:hover {
   background-color: var(--muted) !important;
 }
 
-.dark .hover\\:bg-gray-100:hover {
+.dark .hover\:bg-gray-100:hover {
   background-color: var(--muted) !important;
 }
 
