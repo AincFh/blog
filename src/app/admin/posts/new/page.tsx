@@ -34,7 +34,7 @@ export default function NewPostPage() {
                         <ArrowLeft className="w-5 h-5" style={{ color: theme === 'dark' ? '#fff' : '#212529' }} />
                     </button>
                     <h1 className="text-2xl font-bold" style={{ color: theme === 'dark' ? '#fff' : '#212529' }}>
-                        写文�?
+                        写文章
                     </h1>
                 </div>
                 <div className="flex gap-3">
@@ -74,7 +74,7 @@ export default function NewPostPage() {
                             backgroundColor: theme === 'dark' ? '#1a1a1a' : '#f8f9fa'
                         }}
                     >
-                        <p>Markdown 编辑器即将上�?..</p>
+                        <p>Markdown 编辑器即将上线...</p>
                     </div>
                 </div>
 
@@ -82,7 +82,7 @@ export default function NewPostPage() {
                 <div className="space-y-6">
                     {/* Cover Image */}
                     <div className="admin-card p-4">
-                        <h3 className="font-medium mb-3" style={{ color: theme === 'dark' ? '#fff' : '#212529' }}>封面�?/h3>
+                        <h3 className="font-medium mb-3" style={{ color: theme === 'dark' ? '#fff' : '#212529' }}>封面图</h3>
                         <div
                             className="aspect-video rounded-lg border-2 border-dashed flex flex-col items-center justify-center cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors"
                             style={{ borderColor: theme === 'dark' ? '#333' : '#e9ecef' }}
@@ -100,7 +100,7 @@ export default function NewPostPage() {
                             <label className="block text-sm mb-1.5 text-gray-500">分类</label>
                             <select className="w-full admin-input text-sm">
                                 <option>选择分类...</option>
-                                <option>技�?/option>
+                                <option>技术</option>
                                 <option>生活</option>
                                 <option>随笔</option>
                             </select>
@@ -110,7 +110,7 @@ export default function NewPostPage() {
                             <label className="block text-sm mb-1.5 text-gray-500">标签</label>
                             <input
                                 type="text"
-                                placeholder="输入标签，回车添�?
+                                placeholder="输入标签，回车添加"
                                 className="w-full admin-input text-sm"
                             />
                         </div>
@@ -129,4 +129,3 @@ export default function NewPostPage() {
         </div>
     );
 }
-

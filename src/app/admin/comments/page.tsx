@@ -32,7 +32,7 @@ const MOCK_COMMENTS: Comment[] = Array.from({ length: 20 }).map((_, i) => ({
     postTitle: `文章标题 ${Math.floor(Math.random() * 10) + 1}`,
     author: `用户${i + 1}`,
     authorEmail: `user${i + 1}@example.com`,
-    content: `这是一条评论内容示�?${i + 1},包含了用户的想法和反馈。`,
+    content: `这是一条评论内容示例${i + 1},包含了用户的想法和反馈。`,
     status: i % 3 === 0 ? 'pending' : i % 3 === 1 ? 'approved' : 'rejected',
     createdAt: new Date(Date.now() - Math.random() * 10000000000).toISOString().split('T')[0],
 }));
@@ -70,7 +70,7 @@ export default function CommentsPage() {
     };
 
     const handleDelete = (id: string) => {
-        if (confirm('确定要删除这条评论吗�?)) {
+        if (confirm('确定要删除这条评论吗？')) {
             setData(prev => prev.filter(c => c.id !== id));
         }
     };
@@ -78,7 +78,7 @@ export default function CommentsPage() {
     const columns = [
         {
             key: 'author',
-            header: '评论�?,
+            header: '评论人',
             width: '15%',
             render: (comment: Comment) => (
                 <div className="flex items-center gap-3">
@@ -106,19 +106,19 @@ export default function CommentsPage() {
         },
         {
             key: 'status',
-            header: '状�?,
+            header: '状态',
             width: '12%',
             render: (comment: Comment) => (
                 <span className={`flex items-center gap-1.5 text-xs font-medium ${comment.status === 'approved' ? 'text-green-600 dark:text-green-400' :
-                        comment.status === 'pending' ? 'text-amber-600 dark:text-amber-400' :
-                            'text-red-600 dark:text-red-400'
+                    comment.status === 'pending' ? 'text-amber-600 dark:text-amber-400' :
+                        'text-red-600 dark:text-red-400'
                     }`}>
                     <span className={`w-1.5 h-1.5 rounded-full ${comment.status === 'approved' ? 'bg-green-500' :
-                            comment.status === 'pending' ? 'bg-amber-500' :
-                                'bg-red-500'
+                        comment.status === 'pending' ? 'bg-amber-500' :
+                            'bg-red-500'
                         }`} />
-                    {comment.status === 'approved' ? '已批�? :
-                        comment.status === 'pending' ? '待审�? : '已拒�?}
+                    {comment.status === 'approved' ? '已批准' :
+                        comment.status === 'pending' ? '待审核' : '已拒绝'}
                 </span>
             ),
             sortable: true
@@ -189,7 +189,7 @@ export default function CommentsPage() {
                         评论管理
                     </h1>
                     <p className="text-sm" style={{ color: theme === 'dark' ? '#a0a0a0' : '#6c757d' }}>
-                        审核和管理用户评�?
+                        审核和管理用户评论
                         {pendingCount > 0 && (
                             <span className="ml-2 px-2 py-0.5 bg-amber-600/20 text-amber-600 dark:text-amber-400 rounded-full text-xs">
                                 {pendingCount} 条待审核
@@ -206,14 +206,14 @@ export default function CommentsPage() {
                 onSearch={setSearchQuery}
                 filters={[
                     {
-                        label: '状�?,
+                        label: '状态',
                         value: statusFilter,
                         onChange: setStatusFilter,
                         options: [
                             { value: 'all', label: '全部' },
-                            { value: 'pending', label: '待审�? },
-                            { value: 'approved', label: '已批�? },
-                            { value: 'rejected', label: '已拒�? },
+                            { value: 'pending', label: '待审核' },
+                            { value: 'approved', label: '已批准' },
+                            { value: 'rejected', label: '已拒绝' },
                         ]
                     }
                 ]}
@@ -221,4 +221,3 @@ export default function CommentsPage() {
         </div>
     );
 }
-
