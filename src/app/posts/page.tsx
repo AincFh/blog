@@ -68,14 +68,14 @@ export default function PostsPage() {
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl font-bold mb-4 text-foreground"
           >
-            所有文�?          </motion.h1>
+            所有文�?          </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
             className="text-muted-foreground"
           >
-            �?{posts.length * totalPages} 篇文章，记录技术与生活
+            �?{posts.length * totalPages} 篇文章，记录技术与生活
           </motion.p>
         </header>
 
@@ -99,7 +99,7 @@ export default function PostsPage() {
                     id={parseInt(post.id)}
                     title={post.title}
                     excerpt={post.excerpt || ""}
-                    category={post.categories[0]?.name || "未分�?}
+                    category={post.categories[0]?.name || "未分�?}
                     author={{
                       name: post.author.username,
                       avatar: post.author.avatar || ""
@@ -122,16 +122,16 @@ export default function PostsPage() {
                   disabled={currentPage === 1}
                   leftIcon={<ArrowLeft className="w-4 h-4" />}
                 >
-                  上一�?                </Button>
+                  上一�?                </Button>
                 <span className="flex items-center text-sm font-medium text-muted-foreground">
-                  �?{currentPage} �?/ �?{totalPages} �?                </span>
+                  �?{currentPage} �?/ �?{totalPages} �?                </span>
                 <Button
                   variant="outline"
                   onClick={() => handlePageChange(currentPage + 1)}
                   disabled={currentPage === totalPages}
                   rightIcon={<ArrowRight className="w-4 h-4" />}
                 >
-                  下一�?                </Button>
+                  下一�?                </Button>
               </div>
             )}
           </>

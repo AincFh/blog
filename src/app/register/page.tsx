@@ -34,9 +34,9 @@ export default function RegisterPage() {
   // 表单验证函数
   const validateUsername = (username: string) => {
     if (!username) return "请输入用户名";
-    if (username.length < 3) return "用户名长度至少为3�?;
-    if (username.length > 20) return "用户名长度不能超�?0�?;
-    if (!/^[a-zA-Z0-9_\u4e00-\u9fa5]+$/.test(username)) return "用户名只能包含字母、数字、下划线和中文字�?;
+    if (username.length < 3) return "用户名长度至少为3�?;
+    if (username.length > 20) return "用户名长度不能超�?0�?;
+    if (!/^[a-zA-Z0-9_\u4e00-\u9fa5]+$/.test(username)) return "用户名只能包含字母、数字、下划线和中文字�?;
     return "";
   };
 
@@ -48,15 +48,15 @@ export default function RegisterPage() {
   };
 
   const validatePassword = (password: string) => {
-    if (!password) return "请输入密�?;
-    if (password.length < 8) return "密码长度至少�?�?;
+    if (!password) return "请输入密�?;
+    if (password.length < 8) return "密码长度至少�?�?;
     if (!/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/.test(password)) return "密码必须包含大小写字母和数字";
     return "";
   };
 
   const validateConfirmPassword = (password: string, confirmPassword: string) => {
-    if (!confirmPassword) return "请确认密�?;
-    if (password !== confirmPassword) return "两次输入的密码不一�?;
+    if (!confirmPassword) return "请确认密�?;
+    if (password !== confirmPassword) return "两次输入的密码不一�?;
     return "";
   };
 
@@ -127,7 +127,7 @@ export default function RegisterPage() {
             <UserPlus className="w-8 h-8" />
           </motion.div>
           <h1 className="text-3xl font-bold text-foreground mb-2">创建账户</h1>
-          <p className="text-muted-foreground">加入我们，开启精彩旅�?/p>
+          <p className="text-muted-foreground">加入我们，开启精彩旅�?/p>
         </div>
 
         {successMessage && (
@@ -153,7 +153,7 @@ export default function RegisterPage() {
 
         <form onSubmit={handleSubmit} className="space-y-5">
           <Input
-            label="用户�?
+            label="用户�?
             placeholder="请输入用户名"
             value={formData.username}
             onChange={(e) => {
@@ -182,7 +182,7 @@ export default function RegisterPage() {
               <Input
                 label="密码"
                 type={showPassword ? "text" : "password"}
-                placeholder="至少8位，含大小写字母和数�?
+                placeholder="至少8位，含大小写字母和数�?
                 value={formData.password}
                 onChange={(e) => {
                   setFormData({ ...formData, password: e.target.value });
@@ -265,7 +265,7 @@ export default function RegisterPage() {
               <div className="w-full border-t border-border/50"></div>
             </div>
             <div className="relative flex justify-center text-xs uppercase">
-              <span className="bg-background px-2 text-muted-foreground">或使用以下方�?/span>
+              <span className="bg-background px-2 text-muted-foreground">或使用以下方�?/span>
             </div>
           </div>
 

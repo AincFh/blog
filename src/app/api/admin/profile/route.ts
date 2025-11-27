@@ -6,9 +6,9 @@ import { NextResponse } from 'next/server';
 // Mock database (in real app replace with DB calls)
 let mockProfile = {
     username: 'Admin User',
-    role: '超级管理�?,
+    role: '超级管理�?,
     email: 'admin@blog.com',
-    bio: '热爱技术，专注�?Web 开发和内容创作。喜欢探索新技术，分享编程经验�?,
+    bio: '热爱技术，专注�?Web 开发和内容创作。喜欢探索新技术，分享编程经验�?,
     phone: '138 0000 8888',
     location: '上海, 中国',
     website: 'https://blog.example.com',
