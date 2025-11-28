@@ -5,6 +5,10 @@ import "./responsive.css";
 import "./performance.css";
 import ClientShell from "./ClientShell";
 
+// Configure Edge Runtime for all routes
+export const runtime = 'edge';
+
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
